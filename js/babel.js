@@ -15,7 +15,7 @@
 	}
 
 
-	function loadJSON(callback) {   
+	function loadJSON() {   
 		const xhr = new XMLHttpRequest();
 		xhr.overrideMimeType("application/json");
 		xhr.open('GET', './data/data.json', true); 
@@ -35,6 +35,9 @@
 		html += json.map( (item) => {
 			const rightDateFormat = item.data.replace(/\//ig, '.');
 			const day = rightDateFormat.substring(0,2);
+			if(day == '-0' || day > settings.daysInMonth){
+				return;
+			}
 			const position = (day * settings.singleDayValue()).toFixed(2) + '%';
 			let positionOnRange = 0;
 			if(position === '100.00%') {
