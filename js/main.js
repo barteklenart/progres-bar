@@ -14,7 +14,7 @@ var settings = {
 	}
 };
 
-function loadJSON(callback) {
+function loadJSON() {
 	var xhr = new XMLHttpRequest();
 	xhr.overrideMimeType("application/json");
 	xhr.open('GET', './data/data.json', true);
@@ -34,6 +34,9 @@ function renderData(data) {
 	html += json.map(function (item) {
 		var rightDateFormat = item.data.replace(/\//ig, '.');
 		var day = rightDateFormat.substring(0, 2);
+		if (day == '-0' || day > settings.daysInMonth) {
+			return;
+		}
 		var position = (day * settings.singleDayValue()).toFixed(2) + '%';
 		var positionOnRange = 0;
 		if (position === '100.00%') {
