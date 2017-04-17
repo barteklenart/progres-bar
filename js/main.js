@@ -46,7 +46,6 @@ function renderData(data) {
 		} else {
 			positionOnRange = position;
 		}
-		// const positionOnRange = position !== '100.00%' ? position : 'auto; right: -1px';
 		return "\n\t\t\t\t<span class=\"point point-" + item.ikona + " " + (currentData >= Number(day) ? 'active' : '') + "\" data-percent=\"" + position + "\" style=\"left: " + positionOnRange + "\">\n\t\t\t\t\t<i class=\"fa " + item.ikona + " \" ari;a-hidden=\"true\"></i>\n\t\t\t\t\t<span class=\"tooltip-area\">\n\t\t\t\t\t\t<span class=\"tooltip-date\">\n\t\t\t\t\t\t\t" + rightDateFormat + "\n\t\t\t\t\t\t</span>\n\t\t\t\t\t\t<span class=\"tooltip-text\">\n\t\t\t\t\t\t\t" + (item.nazwa.length > 21 ? item.nazwa.substring(0, 21) + "..." : item.nazwa) + "\n\t\t\t\t\t\t</span>\n\t\t\t\t\t</span>\n\t\t\t\t</span>\n\t\t\t";
 	}).join('');
 	range.innerHTML = html;
