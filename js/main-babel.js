@@ -2,12 +2,12 @@
 	
 	/*
 		Wartości według założeń zadania:
-		currentData - 10 czerwca
+		currentDay - 10 czerwca
 		daysInMonth -  maksymalna ilość dni w czerwcu to 30
 	*/
 
 	var settings = {
-		currentData: 10,
+		currentDay: 10,
 		daysInMonth: 30,
 		singleDayValue: function() {
 			return (100 / this.daysInMonth );
@@ -30,7 +30,7 @@
 	function renderData(data){
 		const json = JSON.parse(data);
 		const range = document.querySelector('.range');
-		const currentData = settings.currentData; 
+		const currentDay = settings.currentDay; 
 		let html = '<div class="range-inner"></div>';
 		html += json.map( (item) => {
 			const rightDateFormat = item.data.replace(/\//ig, '.');
@@ -49,7 +49,7 @@
 			}
 			// const positionOnRange = position !== '100.00%' ? position : 'auto; right: -1px';
 			return `
-				<span class="point point-${item.ikona} ${ currentData >= Number(day) ? 'active' : '' }" data-percent="${position}" style="left: ${positionOnRange}">
+				<span class="point point-${item.ikona} ${ currentDay >= Number(day) ? 'active' : '' }" data-percent="${position}" style="left: ${positionOnRange}">
 					<i class="fa ${item.ikona} " ari;a-hidden="true"></i>
 					<span class="tooltip-area">
 						<span class="tooltip-date">
@@ -63,13 +63,13 @@
 			`
 		}).join('');
 		range.innerHTML = html;
-		startBlueRange(currentData);
+		startBlueRange(currentDay);
 	}
 
-	function startBlueRange(currentData){
+	function startBlueRange(currentDay){
 		const rangeInner = document.querySelector('.range-inner');
 		setTimeout(function(){
-			rangeInner.style.width = (currentData * settings.singleDayValue()).toFixed(2) + '%';
+			rangeInner.style.width = (currentDay * settings.singleDayValue()).toFixed(2) + '%';
 		}, 0)
 	}
 
