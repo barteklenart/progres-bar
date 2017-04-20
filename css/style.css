@@ -7,7 +7,7 @@
   padding-top: 30px;
   padding-left: 15px;
   padding-right: 15px; }
-  @media (min-width: 480px) {
+  @media (min-width: 481px) {
     .wrapper {
       padding-top: 100px; } }
 
@@ -33,7 +33,7 @@
     transform: translateX(-50%);
     -webkit-box-shadow: 0px -11px 11px #ede3ef;
     box-shadow: 0px -11px 11px #ede3ef; }
-    @media (min-width: 480px) {
+    @media (min-width: 481px) {
       .range:before {
         content: ''; } }
   .range .point {
@@ -53,7 +53,7 @@
         border-radius: 0;
         border: 0;
         height: auto; } }
-    @media (min-width: 480px) {
+    @media (min-width: 481px) {
       .range .point:hover {
         cursor: pointer;
         background: #73d2ab;
@@ -61,7 +61,7 @@
         background: -webkit-gradient(linear, left top, left bottom, from(#73d2ab), color-stop(0%, #73d2ab), to(#57b28c));
         background: linear-gradient(to bottom, #73d2ab 0%, #73d2ab 0%, #57b28c 100%);
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#73d2ab', endColorstr='#57b28c',GradientType=0 ); } }
-    @media (min-width: 480px) {
+    @media (min-width: 481px) {
       .range .point.active {
         color: #122244;
         background: #6cc7ee;
@@ -86,7 +86,7 @@
         background-color: #122244;
         margin-right: 11px;
         top: 6px; } }
-    @media (min-width: 480px) {
+    @media (min-width: 481px) {
       .range .point:hover .tooltip-area {
         display: block; } }
     .range .point:hover .tooltip-area:after {
@@ -132,7 +132,7 @@
         transition: all .3s;
         opacity: 0;
         display: none; }
-        @media (min-width: 480px) {
+        @media (min-width: 481px) {
           .range .point .tooltip-area:after {
             content: url(../images/arrow-down.png); } }
       .range .point .tooltip-area:hover:after {
@@ -145,7 +145,7 @@
         padding-top: 7px;
         padding-bottom: 7px;
         font-weight: 600; }
-        @media (min-width: 480px) {
+        @media (min-width: 481px) {
           .range .point .tooltip-area .tooltip-date {
             border-bottom: 1px solid #73d2ab; } }
         @media (max-width: 480px) {
@@ -174,7 +174,7 @@
       -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%); }
-  @media (min-width: 480px) {
+  @media (min-width: 481px) {
     .range-inner {
       width: 1.1px;
       height: 11px;
