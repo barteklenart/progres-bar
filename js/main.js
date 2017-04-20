@@ -2,12 +2,12 @@
 
 /*
 	Wartości według założeń zadania:
-	currentData - 10 czerwca
+	currentDay - 10 czerwca
 	daysInMonth -  maksymalna ilość dni w czerwcu to 30
 */
 
 var settings = {
-	currentData: 10,
+	currentDay: 10,
 	daysInMonth: 30,
 	singleDayValue: function singleDayValue() {
 		return 100 / this.daysInMonth;
@@ -29,7 +29,7 @@ function loadJSON() {
 function renderData(data) {
 	var json = JSON.parse(data);
 	var range = document.querySelector('.range');
-	var currentData = settings.currentData;
+	var currentDay = settings.currentDay;
 	var html = '<div class="range-inner"></div>';
 	html += json.map(function (item) {
 		var rightDateFormat = item.data.replace(/\//ig, '.');
@@ -46,16 +46,17 @@ function renderData(data) {
 		} else {
 			positionOnRange = position;
 		}
-		return "\n\t\t\t\t<span class=\"point point-" + item.ikona + " " + (currentData >= Number(day) ? 'active' : '') + "\" data-percent=\"" + position + "\" style=\"left: " + positionOnRange + "\">\n\t\t\t\t\t<i class=\"fa " + item.ikona + " \" ari;a-hidden=\"true\"></i>\n\t\t\t\t\t<span class=\"tooltip-area\">\n\t\t\t\t\t\t<span class=\"tooltip-date\">\n\t\t\t\t\t\t\t" + rightDateFormat + "\n\t\t\t\t\t\t</span>\n\t\t\t\t\t\t<span class=\"tooltip-text\">\n\t\t\t\t\t\t\t" + (item.nazwa.length > 21 ? item.nazwa.substring(0, 21) + "..." : item.nazwa) + "\n\t\t\t\t\t\t</span>\n\t\t\t\t\t</span>\n\t\t\t\t</span>\n\t\t\t";
+		// const positionOnRange = position !== '100.00%' ? position : 'auto; right: -1px';
+		return "\n\t\t\t\t<span class=\"point point-" + item.ikona + " " + (currentDay >= Number(day) ? 'active' : '') + "\" data-percent=\"" + position + "\" style=\"left: " + positionOnRange + "\">\n\t\t\t\t\t<i class=\"fa " + item.ikona + " \" ari;a-hidden=\"true\"></i>\n\t\t\t\t\t<span class=\"tooltip-area\">\n\t\t\t\t\t\t<span class=\"tooltip-date\">\n\t\t\t\t\t\t\t" + rightDateFormat + "\n\t\t\t\t\t\t</span>\n\t\t\t\t\t\t<span class=\"tooltip-text\">\n\t\t\t\t\t\t\t" + (item.nazwa.length > 21 ? item.nazwa.substring(0, 21) + "..." : item.nazwa) + "\n\t\t\t\t\t\t</span>\n\t\t\t\t\t</span>\n\t\t\t\t</span>\n\t\t\t";
 	}).join('');
 	range.innerHTML = html;
-	startBlueRange(currentData);
+	startBlueRange(currentDay);
 }
 
-function startBlueRange(currentData) {
+function startBlueRange(currentDay) {
 	var rangeInner = document.querySelector('.range-inner');
 	setTimeout(function () {
-		rangeInner.style.width = (currentData * settings.singleDayValue()).toFixed(2) + '%';
+		rangeInner.style.width = (currentDay * settings.singleDayValue()).toFixed(2) + '%';
 	}, 0);
 }
 
