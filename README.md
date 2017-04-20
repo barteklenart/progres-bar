@@ -1,2 +1,2 @@
 # progress-bar
-Do prawidłowego działania potrzebne jest uruchomienie np. na localhost.  
+Do prawidłowego działania skryptu potrzebne jest uruchomienie go np. na localhost.  
