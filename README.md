@@ -1,2 +1,2 @@
 # progress-bar
-Do prawidłowego działania skryptu potrzebne jest uruchomienie go np. na localhost.  
+<a href="https://barteklenart.github.io/progress-bar/" target="_blnank">https://barteklenart.github.io/progress-bar/</a> 
